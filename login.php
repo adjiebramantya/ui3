@@ -71,7 +71,9 @@
 						if ($count > 0) {
 							session_start();
 							$_SESSION['namauser'] = $row['nama_lengkap'];
-							header('location:index1.php');
+							?>
+  								<meta http-equiv="refresh" content="0;url=index1.php" />
+  							<?php
 						}else{
 							echo "Email atau password anda salah!";
 						}
