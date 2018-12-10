@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="chartjs/Chart.js"></script>
 </head>
 <body>
 	<div id="header" class="fixed-top">
@@ -50,62 +51,62 @@
 		<div class="content">
 			<h3> Grafik Hasil Panen Padi</h3>
 			<p>Hasil Panen 5 Tahun Sebelumnya</p>
+			<form method="post">
 			<div class="row my-2 mx-3">
-				<div class="col-3">1. 5 tahun terakhir</div>
+				<div class="col-3">1. 5 tahun terakhir.</div>
 				<div class="col-4">
-					<form>
 						: <input type="text" name="ke5">
-					</form>
 				</div>
 				<div class="col-2">ton/hektar</div>
 			</div>
 			<div class="row my-2 mx-3">
-				<div class="col-3">2. 4 tahun terakhir</div>
+				<div class="col-3">2. 4 tahun terakhir.</div>
 				<div class="col-4">
-					<form>
 						: <input type="text" name="ke4">
-					</form>
 				</div>
-				<div class="col-2">ton/hektar</div>
+				<div class="col-2">ton/hektar.</div>
 			</div>
 			<div class="row my-2 mx-3">
 				<div class="col-3">3. 3 tahun terakhir</div>
 				<div class="col-4">
-					<form>
 						: <input type="text" name="ke3">
-					</form>
 				</div>
-				<div class="col-2">ton/hektar</div>
+				<div class="col-2">ton/hektar.</div>
 			</div>
 			<div class="row my-2 mx-3">
 				<div class="col-3">4. 2 tahun terakhir</div>
 				<div class="col-4">
-					<form>
 						: <input type="text" name="ke2">
-					</form>
 				</div>
-				<div class="col-2">ton/hektar</div>
+				<div class="col-2">ton/hektar.</div>
 			</div>
 			<div class="row my-2 mx-3">
 				<div class="col-3">5. 1 tahun terakhir</div>
 				<div class="col-4">
-					<form>
 						: <input type="text" name="ke1">
-					</form>
 				</div>
-				<div class="col-2">ton/hektar</div>
+				<div class="col-2">ton/hektar.</div>
 			</div>
 				<div class="row ml-5">
-					<form>
-						<button>Simpan</button>
-					</form>
+						<button name="simpan">Simpan</button>
 				</div>
+			</form>
+
+			<?php if (isset($_POST['simpan'])) { ?>
+				
 				<h3> Hasil :</h3>
 
-			<div class="grafik mx-5"></div>
-
+				<div style="width: 500px;margin: 0px auto;">
+					<canvas id="myChart"></canvas>
+				</div>
+				
 			<h3>Keterangan :</h3>
+			<?php 
+			
+			 ?>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora officia omnis modi a expedita quisquam, quam laborum, accusamus, aperiam nesciunt saepe aut amet, incidunt illo dolorum ratione? Quas, ratione? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis cupiditate, reiciendis illo porro magnam sunt nemo, recusandae quas! Dicta, placeat, dolor?</p>
+
+			<?php } ?>
 
 		</div>
 
@@ -131,5 +132,65 @@
 			</div>
 	
 	</div>
+
+				<script>
+					var ctx = document.getElementById("myChart").getContext('2d');
+					var myChart = new Chart(ctx, {
+						type: 'bar',
+						data: {
+							labels: ["Tahun Ke-1", "Tahun ke-2", "Tahun Ke-3", "Tahun ke-4","Tahun ke-5"],
+							datasets: [{
+								label: '',
+								data: [
+								<?php 
+								$tahun1 = $_POST['ke1'];
+								echo $tahun1;
+								?>, 
+								<?php 
+								$tahun2 = $_POST['ke2'];
+								echo $tahun2;
+								?>, 
+								<?php 
+								$tahun3 = $_POST['ke3'];
+								echo $tahun3;
+								?>, 
+								<?php 
+								$tahun4 = $_POST['ke4'];
+								echo $tahun4;
+								?>,
+								<?php 
+								$tahun5 = $_POST['ke5'];
+								echo $tahun5;
+								?>
+								],
+								backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(255, 162, 235, 0.2)',
+								],
+								borderColor: [
+								'rgba(255,99,132,1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(255, 162, 235, 0.2)',
+								],
+								borderWidth: 1
+							}]
+						},
+						options: {
+							scales: {
+								yAxes: [{
+									ticks: {
+										beginAtZero:true
+									}
+								}]
+							}
+						}
+					});
+				</script>
+
 </body>
 </html>
