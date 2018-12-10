@@ -1,8 +1,8 @@
 <?php
 	$servername ="localhost";
-	$username="id8152792_padikita";
-	$password="12345";
-	$databasename="id8152792_padikita";
+	$username="root";
+	$password="";
+	$databasename="padikita";
 
 	$connection=mysqli_connect($servername,$username,$password,$databasename);
 

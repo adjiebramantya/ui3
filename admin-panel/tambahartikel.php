@@ -19,6 +19,7 @@
 	<h3>Tambah Artikel</h3>
 
 	Judul: <input type="text" name="judul"><br>
+	Gambar : <input type="file" name="namafile"><br>
 	Isi artikel : <textarea name="isi_artikel" id="editor"></textarea>
 	<!-- php - $tgl = date('Y-m-d') -->
 	<input type="submit" name="tambah">
@@ -27,12 +28,15 @@
 	<?php
 		if (isset($_POST['tambah'])) {
 			$judul=$_POST['judul'];
+			$namafile=$_FILES['namafile']['name'];
 			$isi=$_POST['isi_artikel'];
 
 			$tanggal=date('Y-m-d');
 
-			$query="INSERT INTO artikel (judul,tanggal_artikel,isi_artikel) VALUES ('$judul','$tanggal','$isi')";
+			$query="INSERT INTO artikel (judul,tanggal_artikel,gambar,isi_artikel) VALUES ('$judul','$tanggal','$namafile','$isi')";
 			$result=mysqli_query($connection,$query);
+
+			move_uploaded_file($_FILES['namafile']['tmp_name'],'image/'.$_FILES['namafile']['name']);
 
 			header("location:tabel5.php");
 
