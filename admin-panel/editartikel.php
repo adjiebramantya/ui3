@@ -147,21 +147,25 @@
                                 $resultselectedit= mysqli_query($connection,$queryselectedit);
                                 $rowedit=mysqli_fetch_assoc($resultselectedit);
                             ?>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <h3>Edit Artikel</h3>
         <input type="hidden" name="idartikel" value="<?php echo $rowedit['id_artikel']; ?>">
         Judul : <input type="text" name="judul" value="<?php echo $rowedit['judul'];?>">
         <br/><br/>
+        Gambar: <input type="file" name="namafile"> <br>
         Isi artikel : <textarea name="isiartikel" id="editor"><?php echo $rowedit['isi_artikel'];?></textarea>
         <input type="submit" name="edit">
 
         <?php 
             if (isset($_POST['edit'])) {
                 $judul = $_POST['judul'];
+                $namafile=$_FILES['namafile']['name'];
                 $isi=$_POST['isiartikel'];
                 $idartikel = $_POST['idartikel'];
 
-                $queryedit = "UPDATE artikel SET judul = '$judul', isi_artikel = '$isi' WHERE id_artikel = '$idartikel';";
+                move_uploaded_file($_FILES['namafile']['tmp_name'],'image/'.$_FILES['namafile']['name']);
+
+                $queryedit = "UPDATE artikel SET judul = '$judul', isi_artikel = '$isi' gambar = '$namafile' WHERE id_artikel = '$idartikel';";
                 if(mysqli_query($connection,$queryedit)){
                     ?>
   <meta http-equiv="refresh" content="0;url=tabel5.php" />

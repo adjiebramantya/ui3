@@ -15,7 +15,7 @@
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 </head>
 <body>
-	<form method="post">
+	<form method="post" enctype="multipart/form-data">
 	<h3>Tambah Artikel</h3>
 
 	Judul: <input type="text" name="judul"><br>

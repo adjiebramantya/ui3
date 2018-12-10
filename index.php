@@ -104,24 +104,22 @@
 		</div>
 		<div class="sidebar">
 			<p style="background-color: #006600; margin-top: 20px; color: white;">POPULER</p>
+			<?php 
+
+			$artikel="SELECT * FROM artikel";
+			$selectartikel=mysqli_query($conn,$artikel);
+			
+
+			while ($row=mysqli_fetch_array($selectartikel)) { ?>
+
 			<div class="card mx-3" style="width: auto;">
-  				<img class="card-img-top" src="http://s3media.freemalaysiatoday.com/wp-content/uploads/2012/01/padi23.jpg" width="auto" height="200px" alt="Card image cap">
+  				<img class="card-img-top" src="admin-panel/image/<?php echo $row['gambar'] ?>" width="auto" height="200px" alt="<?php echo $row['gambar'] ?>">
   				<div class="card-body">
-    				<p class="card-text"><a href="artikel1.php">Artikel 1</a></p>
+    				<p class="card-text"><a href="artikel.php?id_artikel=<?php echo $row['id_artikel'] ?>"><?php echo $row['judul']?></a></p>
   				</div>
 			</div><br/>
-			<div class="card mx-3" style="width: auto;">
-  				<img class="card-img-top" src="http://carakumenanam.com/wp-content/uploads/2016/08/padi.jpg" width="auto" height="200px" alt="Card image cap">
-  				<div class="card-body">
-    				<p class="card-text"><a href="#">Artikel 2</a></p>
-  				</div>
-			</div><br/>
-			<div class="card mx-3" style="width: auto;">
-  				<img class="card-img-top" src="https://cdn0-production-images-kly.akamaized.net/7TO881BwB-mhXvIOxibyIF15LjE=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1745394/original/053955200_1508476779-612818842.jpg" width="auto" height="200px" alt="Card image cap">
-  				<div class="card-body">
-    				<p class="card-text"><a href="#">Artikel 3</a></p>
-  				</div>
-			</div>
+			
+			<?php } ?>	
 	</div>
 </div>
 
