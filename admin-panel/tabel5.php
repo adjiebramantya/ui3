@@ -174,10 +174,10 @@
                                             <td><?php echo $row['id_artikel'] ?></td>
                                             <td class=" "><?php echo $row['judul'] ?></td>
                                             <td class=" "><?php echo $row['tanggal_artikel'] ?></td>
-                                            <td class="center "><button class="btn btn-success">Ubah</button></td>
-                                            <td class="center "><button class="btn btn-danger">Hapus</button></td>
+                                            <td class="center "><button class="btn btn-success"><a href="editartikel.php?id_artikel=<?php echo $row['id_artikel']?>" style="color:white;">Ubah</a></button></td>
+                                            <td class="center "><button class="btn btn-danger" data-toggle="modal" data-target="#modalHapus<?php  echo $row['id_artikel']; ?>">Hapus</button></td>
                                         </tr>
-                                        <?php } ?>
+                                        <?php include("hapusartikel.php"); } ?>
                                     </tbody>
                                 </table>
                         </div>

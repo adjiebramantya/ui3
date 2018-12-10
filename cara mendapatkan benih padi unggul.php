@@ -105,12 +105,6 @@
     				<p class="card-text"><a href="#">Artikel 2</a></p>
   				</div>
 			</div><br/>
-			<div class="card mx-3" style="width: auto;">
-  				<img class="card-img-top" src="https://cdn0-production-images-kly.akamaized.net/7TO881BwB-mhXvIOxibyIF15LjE=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1745394/original/053955200_1508476779-612818842.jpg" width="auto" height="200px" alt="Card image cap">
-  				<div class="card-body">
-    				<p class="card-text"><a href="#">Artikel 3</a></p>
-  				</div>
-			</div>
 
 	
 	</div>

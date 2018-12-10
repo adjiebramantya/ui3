@@ -29,10 +29,10 @@
 				          Fitur
 				        </a>
 				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				          <a class="dropdown-item" href="#">Fitur 1</a>
-				          <a class="dropdown-item" href="#">Fitur 2</a>
-				          <a class="dropdown-item" href="#">Fitur 3</a>
-				          <a class="dropdown-item" href="#">Fitur 4</a></div>
+				          <a class="dropdown-item" href="fitur1.php">Fitur 1</a>
+				          <a class="dropdown-item" href="fitur2.php">Fitur 2</a>
+				          <a class="dropdown-item" href="fitur3.php">Fitur 3</a>
+				          <a class="dropdown-item" href="fitur4.php">Fitur 4</a></div>
 				      </li>
 				      <li class="nav-item active">
 				        <a class="nav-link" href="#" style="color: white;">Tentang Kita <span class="sr-only">(current)</span></a>
