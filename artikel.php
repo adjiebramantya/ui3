@@ -1,8 +1,14 @@
+<?php 
+	include("connect.php");
+
+	$id_artikel=$_GET['id_artikel'];
+	$query = mysqli_query($conn , "SELECT * FROM artikel WHERE id_artikel = '$id_artikel'");
+	$row = mysqli_fetch_array($query);
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('connect.php'); ?>
-	<title>Tentang Kita - Budidaya Padi Kita</title>
+	<title>Penjelasan Padi - Budidaya Padi Kita</title>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
@@ -29,7 +35,7 @@
 				      </li>
 				    </ul>
 				    <form class="form-inline my-2 my-lg-0">
-				      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white; background-color: #1f7a1f;"><a href="login.php" style="color: white;"> Login </a></button>
+				      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white; background-color: #39ac39;">Login</button>
 				    </form>
 				  </div>
 				</nav>
@@ -38,36 +44,25 @@
 	</div>
 
 	<div class="container" style="background-color: lightgrey;">
-		<div class="content">
-			<h3> Tentang Kita</h3>
-			<p>Website "Budidaya Padi Kita" merupakan Website yang berisikan konten serta fitur untuk membantu para petani khusus nya para petani padi agar mereka dapat mengetahui lebih detail mengenai padi.</p> 
-			<p>Pada website ini berisikan fitur seperti Grafik panen pertahun, persilangan varietas, harga beras perdaerah, jenis jenis penyakit hama gulma padi serta pengendaliannya, dan fitur lain
-			Diharapkan melalui Website ini petani dapat memperoleh hasil panen yang maksimal. Website ini dibuat oleh tim dari Mahasiswa Teknik Informatika Semester 3 Politenik Negeri Jember</p>
-			<h5 style="padding-left: 20px;">Anggota TIM :</h5>
-			<ol  style="padding-left: 50px;">
-				<li>Mochammad Lembar Adjie Bramantya (E41172165)</li>
-				<li>Novando Agung Syahputra (E41172150)</li>
-				<li>Ilham Bahtiar (E41172176)</li>
-				<li>Moh. Wafiq Fakhri Ali (E41172219)</li>
-			</ol>
-			<p>Website ini memiliki banyak kekurangan. Oleh karena itu, developer mengharapkan kritik serta saran yang membangun untuk website ini. </p>
-			<h3>Hubungi Kami :</h3>
-			<div class="row">
-				<div class="col-3 ml-4">
-					Email
-				</div>
-				<div class="col-8">: adjiebramantya.ab@gmail.com</div>
-			<div class="col-3 ml-4">
-					No Telepon
+		<div class="content" style="height: 2000px;">
+			<br>
+			<br>
+			<h3><?php echo $row['judul'] ?><h3>
+
+			<div class="ml-3">
+			<h6>Tanggal Upload <?php echo $row['tanggal_artikel'] ?></h6>
 			</div>
-				<div class="col-8">: 082228607806</div>
-				<div class="col-3 ml-4">
-					Instagram
+
+			<center><img src="admin-panel/image/<?php echo $row['gambar'] ?>" alt=""></center>
+			<br>
+			<div class="" style="font-size: 20px;">
+			<?php 
+				echo $row['isi_artikel'];
+			?>
 			</div>
-				<div class="col-8">: adjie.bramantya</div>
-			</div>
+			
 		</div>
-		<div class="sidebar">
+		<div class="sidebar" style="height: 2000px;">
 			<p style="background-color: #006600; margin-top: 20px; color: white;">POPULER</p>
 			<?php 
 
@@ -88,5 +83,6 @@
 		</div>
 	
 	</div>
+
 </body>
 </html>

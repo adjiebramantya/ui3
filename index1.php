@@ -29,7 +29,7 @@
 				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 				    <ul class="navbar-nav mr-auto">
 				      <li class="nav-item active">
-				        <a class="nav-link" href="#" style="color: white;">Beranda <span class="sr-only">(current)</span></a>
+				        <a class="nav-link" href="index1.php" style="color: white;">Beranda <span class="sr-only">(current)</span></a>
 				      </li>
 				      <li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
@@ -42,7 +42,7 @@
 				          <a class="dropdown-item" href="fitur4.php">Fitur 4</a></div>
 				      </li>
 				      <li class="nav-item active">
-				        <a class="nav-link" href="#" style="color: white;">Tentang Kita <span class="sr-only">(current)</span></a>
+				        <a class="nav-link" href="tentang.php" style="color: white;">Tentang Kita <span class="sr-only">(current)</span></a>
 				      </li>
 				    </ul>
 				    <form class="form-inline my-2 my-lg-0">
@@ -131,7 +131,7 @@
 			$artikel="SELECT * FROM artikel";
 			$selectartikel=mysqli_query($conn,$artikel);
 			
-
+			
 			while ($row=mysqli_fetch_array($selectartikel)) { ?>
 
 			<div class="card mx-3" style="width: auto;">

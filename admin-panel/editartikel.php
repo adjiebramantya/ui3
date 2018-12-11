@@ -165,13 +165,9 @@
 
                 move_uploaded_file($_FILES['namafile']['tmp_name'],'image/'.$_FILES['namafile']['name']);
 
-                $queryedit = "UPDATE artikel SET judul = '$judul', isi_artikel = '$isi' gambar = '$namafile' WHERE id_artikel = '$idartikel';";
-                if(mysqli_query($connection,$queryedit)){
-                    ?>
-  <meta http-equiv="refresh" content="0;url=tabel5.php" />
-  <?php
-                }
+                $queryedit = "UPDATE artikel SET judul = '$judul', isi_artikel = '$isi' ,gambar = '$namafile' WHERE id_artikel = '$idartikel';";
 
+                mysqli_query($connection,$queryedit);
 
 
             }
