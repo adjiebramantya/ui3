@@ -31,7 +31,7 @@
 		<form method="post">
 		      <div class="modal-body">
 		      	<input type="hidden" name="id_harga" value="<?php echo $rowselecthapus['id_harga']?>">
-		        Yakin Ingin Menghapus Kota: <b><?php echo $rowselecthapus['kota']?></b>?
+		        Yakin Ingin Menghapus Jenis Beras: <b><?php echo $rowselecthapus['jenisberas']?></b>?
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -149,7 +149,7 @@
                         </div>
                         <div class="panel-body">
                             
-                            <button class=" btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Kota dan Harga</button>
+                            <button class=" btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Jenis Beras dan Harga</button>
                             <?php include("tambahharga.php"); ?>
                             <?php
                                 $queryselect="SELECT * FROM hargapadi;";
@@ -163,10 +163,10 @@
                                     <thead>
                                         <tr role="row">
                                             <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">
-                                                No. 
+                                                Jenis Beras 
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 242px;" aria-label="Browser: activate to sort column ascending">
-                                                Kota/Kabupaten
+                                                Persentase
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 222px;" aria-label="Platform(s): activate to sort column ascending">
                                                 Harga (Rp.)/Kilo
@@ -183,9 +183,9 @@
                                         <?php while ($row=mysqli_fetch_array($resultselect)) {?>
                                             
                                         <tr class="gradeA odd">
-                                            <td class="sorting_1"><?php echo $row['id_harga'] ?></td>
-                                            <td class=" "><?php echo $row['kota'] ?></td>
-                                            <td class=" "><?php echo $row['hargapadi'] ?></td>
+                                            <td class="sorting_1"><?php echo $row['jenisberas'] ?></td>
+                                            <td class=" "><?php echo $row['persen'] ?></td>
+                                            <td class=" "><?php echo $row['hargaberas'] ?></td>
                                             <td class="center ">
                                                 <button class="btn btn-success" data-toggle="modal" data-target="#edit<?php echo $row['id_harga'] ?>">EDIT</button>
                                             </td>

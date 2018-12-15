@@ -108,6 +108,8 @@
 				</div>
 			</form>
 
+
+
 			<?php if (isset($_POST['simpan'])) { ?>
 				
 				<h3> Hasil :</h3>
@@ -115,37 +117,6 @@
 				<div style="width: 500px;margin: 0px auto;">
 					<canvas id="myChart"></canvas>
 				</div>
-				
-			<h3>Keterangan :</h3>
-			<?php 
-			
-			 ?>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tempora officia omnis modi a expedita quisquam, quam laborum, accusamus, aperiam nesciunt saepe aut amet, incidunt illo dolorum ratione? Quas, ratione? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis cupiditate, reiciendis illo porro magnam sunt nemo, recusandae quas! Dicta, placeat, dolor?</p>
-
-			<?php } ?>
-
-		</div>
-
-		<div class="sidebar">
-			<p style="background-color: #006600; margin-top: 20px; color: white;">POPULER</p>
-			<?php 
-
-			$artikel="SELECT * FROM artikel";
-			$selectartikel=mysqli_query($conn,$artikel);
-			
-
-			while ($row=mysqli_fetch_array($selectartikel)) { ?>
-
-			<div class="card mx-3" style="width: auto;">
-  				<img class="card-img-top" src="admin-panel/image/<?php echo $row['gambar'] ?>" width="auto" height="200px" alt="<?php echo $row['gambar'] ?>">
-  				<div class="card-body">
-    				<p class="card-text"><a href="artikel.php?id_artikel=<?php echo $row['id_artikel'] ?>"><?php echo $row['judul']?></a></p>
-  				</div>
-			</div><br/>
-			
-			<?php } ?>	
-		</div>
-	</div>
 
 				<script>
 					var ctx = document.getElementById("myChart").getContext('2d');
@@ -206,5 +177,66 @@
 					});
 				</script>
 
+				
+			<h3>Keterangan :</h3>
+			<?php 
+				$hasil= $tahun1+$tahun2+$tahun3+$tahun4+$tahun5;
+
+				if (8<$hasil) {
+					echo "<p>Perkembangan dan Pertumbuhan Padi di Daerah tersebut baik-Baik saja, Pertahankan!!.</p>";	
+				}
+
+				elseif (6<$hasil) {
+					echo "<p>Faktor yang mempengaruhi Pertumbuhan dan Perkembangan Padi: </p>
+					<p><b>1. Kurang perawatan terhadap tanaman.</b> Perawatan terhadap tanaman sangat diperlukan karena seringkali dengan meningkatnya harga pupuk dan pestisida petani telat untuk melakukan perlakukan terhadap tanaman yang mengakibatkan terlambatnya penanganan terhadap penyebaran hama dan penyakit.</p>
+					<p><b>2. Pola tanam tidak serempak.</b> Pola tanam sangat penting dalam bercocok tanam karena dengan pola tanam yang tidak serempak dapat mengundang hama akan terus berkembang dan siklusnya tidak akan terputus.</p>";
+				}
+
+				elseif (4<$hasil) {
+					echo "<p>Faktor yang mempengaruhi Pertumbuhan dan Perkembangan Padi: </p>
+					<p><b>1. Kurang perawatan terhadap tanaman.</b> Perawatan terhadap tanaman sangat diperlukan karena seringkali dengan meningkatnya harga pupuk dan pestisida petani telat untuk melakukan perlakukan terhadap tanaman yang mengakibatkan terlambatnya penanganan terhadap penyebaran hama dan penyakit.</p>
+					<p><b>2. Pola tanam tidak serempak.</b> Pola tanam sangat penting dalam bercocok tanam karena dengan pola tanam yang tidak serempak dapat mengundang hama akan terus berkembang dan siklusnya tidak akan terputus.</p>
+					<p><b>3. Kekeringan.</b> Kekeringan merupakan faktor penting dalam terjadinya gagal panen, karena kekeringan akan menghentikan suplay air yang dibutuhkan tanaman untuk melakukan pertumbuhan dan pembuahan, kekeringan tidak hanya terjadi dimusim kemarau saja melainkan kekeringan juga bisa jadi karena faktor irigasi yang rusak.</p>";
+				}
+
+				elseif (2<$hasil) {
+					echo "<p>Faktor yang mempengaruhi Pertumbuhan dan Perkembangan Padi: </p>
+					<p><b>1. Salah memilih varietas benih.</b> faktor salahnya memilih varietas benih, seringkali petani memakai benih yang tidak sesuai kedaan wilayah sehingga terjadi serangan hama dan penyakit yang meningkat lebih cepat.</p>";
+				}
+
+				elseif (0<$hasil) {
+					echo "<p>Faktor yang mempengaruhi Pertumbuhan dan Perkembangan Padi: </p>
+					<p><b>1. Salah memilih varietas benih.</b> faktor salahnya memilih varietas benih, seringkali petani memakai benih yang tidak sesuai kedaan wilayah sehingga terjadi serangan hama dan penyakit yang meningkat lebih cepat.</p>";
+				}
+
+				else {
+					echo "<p>Masukkan Data dengan Benar!! Silahkan Coba lagi.</p>";
+				}				
+			 ?>
+
+			<?php } ?>
+
+		</div>
+
+		<div class="sidebar">
+			<p style="background-color: #006600; margin-top: 20px; color: white;">POPULER</p>
+			<?php 
+
+			$artikel="SELECT * FROM artikel";
+			$selectartikel=mysqli_query($conn,$artikel);
+			
+
+			while ($row=mysqli_fetch_array($selectartikel)) { ?>
+
+			<div class="card mx-3" style="width: auto;">
+  				<img class="card-img-top" src="admin-panel/image/<?php echo $row['gambar'] ?>" width="auto" height="200px" alt="<?php echo $row['gambar'] ?>">
+  				<div class="card-body">
+    				<p class="card-text"><a href="artikel.php?id_artikel=<?php echo $row['id_artikel'] ?>"><?php echo $row['judul']?></a></p>
+  				</div>
+			</div><br/>
+			
+			<?php } ?>	
+		</div>
+	</div>		
 </body>
 </html>

@@ -3,10 +3,11 @@
 	
 
 		if (isset($_POST['tambah'])) {
-			$kota=$_POST['kota'];
-			$hargapadi=$_POST['hargapadi'];
+			$jenisberas=$_POST['jenisberas'];
+			$persen=$_POST['persen'];
+			$hargaberas=$_POST['hargaberas'];
 
-			$querytambah="INSERT INTO hargapadi (kota,hargapadi) VALUES ('$kota','$hargapadi')";
+			$querytambah="INSERT INTO hargapadi (jenisberas,persen,hargaberas) VALUES ('$jenisberas','$persen','$hargaberas')";
 
 			$resulttambah=mysqli_query($connection,$querytambah);
 
@@ -31,7 +32,7 @@
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Tambah User</h5>
+		        <h5 class="modal-title" id="exampleModalLabel">Tambah Harga</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
@@ -39,15 +40,21 @@
 		      <div class="modal-body">
 		      		
 		        	<div class="form-group row">
-					    <label  class="col-sm-3 col-form-label">Kota/Kabupaten</label>
+					    <label  class="col-sm-3 col-form-label">Jenis Beras</label>
 					    <div class="col-sm-9">
-					      <input type="text" class="form-control" name="kota">
+					      <input type="text" class="form-control" name="jenisberas">
+					    </div>
+					 </div>
+					 <div class="form-group row">
+					    <label  class="col-sm-3 col-form-label">Persentase</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="persen">
 					    </div>
 					 </div>
 					 <div class="form-group row">
 					    <label class="col-sm-3 col-form-label">Harga/Kilo</label>
 					    <div class="col-sm-9">
-					      <input type="text" class="form-control" name="hargapadi">
+					      <input type="text" class="form-control" name="hargaberas">
 					    </div>
 					 </div>
 					 

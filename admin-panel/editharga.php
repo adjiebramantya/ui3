@@ -1,13 +1,14 @@
 <?php 
 	include("connect.php");
-	
+
 
 		if (isset($_POST['edit'])) {
 			$id_harga=$_POST['id_harga'];
-			$kota=$_POST['kota'];
-			$hargapadi=$_POST['hargapadi'];
+			$jenisberas=$_POST['jenis'];
+			$persen=$_POST['persen'];
+			$hargaberas=$_POST['hargaberas'];
 
-			$queryedit="UPDATE hargapadi SET kota='$kota',hargapadi='$hargapadi' WHERE id_harga=$id_harga";
+			$queryedit="UPDATE hargapadi SET jenisberas='$jenisberas',persen='$persen',hargaberas='$hargaberas' WHERE id_harga=$id_harga";
 
 			$resultedit=mysqli_query($connection,$queryedit);
 		}
@@ -16,7 +17,6 @@
 
 
 		<!-- Modal ubah -->
-		<form method="post">
 		<div class="modal fade" id="edit<?php echo $row['id_harga'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -33,6 +33,7 @@
 		$resultselectedit= mysqli_query($connection,$queryselectedit);
 		$rowselectedit=mysqli_fetch_assoc($resultselectedit);
 		 ?>
+				<form method="post">
 		      <div class="modal-body">
 		      		<div class="form-group row">
 					    <div class="col-sm-12">
@@ -40,24 +41,30 @@
 					    </div>
 					 </div>
 		      		<div class="form-group row">
-					    <label  class="col-sm-4 col-form-label">Kota/Kabupaten</label>
+					    <label  class="col-sm-4 col-form-label">Jenis Beras</label>
 					    <div class="col-sm-8">
-					      <input type="text" class="form-control" name="kota" value="<?php echo $rowselectedit['kota'] ?>">
+					      <input type="text" class="form-control" name="jenis" value="<?php echo $rowselectedit['jenisberas'] ?>">
+					    </div>
+					 </div>
+					<div class="form-group row">
+					    <label  class="col-sm-4 col-form-label">Persentase</label>
+					    <div class="col-sm-8">
+					      <input type="text" class="form-control" name="persen" value="<?php echo $rowselectedit['persen'] ?>">
 					    </div>
 					 </div>
 					 <div class="form-group row">
 					    <label class="col-sm-4 col-form-label">Harga/Kilo</label>
 					    <div class="col-sm-8">
-					      <input type="text" class="form-control" name="hargapadi" value="<?php echo $rowselectedit['hargapadi'] ?>">
+					      <input type="text" class="form-control" name="hargaberas" value="<?php echo $rowselectedit['hargaberas'] ?>">
 					    </div>
 					 </div>
 		      </div>
 
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="submit" class="btn btn-success" name="ubah">Ubah</button>
+		        <button type="submit" class="btn btn-success" name="edit">Ubah</button>
 		      </div>
+		      </form>
 		    </div>
 		  </div>
-		</div>
-		</form>
+		</div>	

@@ -64,22 +64,24 @@
 
 	<div class="container" style="background-color: lightgrey;">
 		<div class="content">
-			<h3 class="mb-2">Harga Beras Daerah.</h3>
+			<h3 class="mb-2">Harga Jenis Beras.</h3>
 				<?php 
 				$queryselect="SELECT * FROM hargapadi";
 				$hasil=mysqli_query($conn,$queryselect);
 				 ?>
 				<table class="table table-bordered table-hover">
 					<thead class="thead-dark">
-						<th>Kota/Kabupaten</th>
-						<th>Harga Padi</th>
+						<th>Jenis Beras</th>
+						<th>Persentase</th>
+						<th>Harga Beras</th>
 					</thead>
 					<tbody>
 					<?php 
 					while ($row=mysqli_fetch_array($hasil)) { ?>
 						<tr>
-							<td><?php echo $row['kota']; ?></td>
-							<td>Rp. <?php echo $row['hargapadi']; ?></td>
+							<td><?php echo $row['jenisberas']; ?></td>
+							<td><?php echo $row['persen']; ?></td>
+							<td>Rp. <?php echo $row['hargaberas']; ?></td>
 						</tr>
 					<?php
 						}

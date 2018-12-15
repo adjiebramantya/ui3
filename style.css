@@ -10,7 +10,8 @@ body {
 	background-image: -ms-linear-gradient(#e6e6e6, #bfbfbf);
 	background-image: -moz-linear-gradient(#e6e6e6, #bfbfbf);
 	background-image: -o-linear-gradient(#e6e6e6, #bfbfbf);
-	background-image: -webkit-linear-gradient(#e6e6e6, #bfbfbf); 
+	background-image: -webkit-linear-gradient(#e6e6e6, #bfbfbf);
+	font-family: ; 
 }
 
 .daftar1 {

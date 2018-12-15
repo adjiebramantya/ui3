@@ -93,7 +93,7 @@
 					 <div class="form-group row">
 					    <label class="col-sm-3 col-form-label">Password</label>
 					    <div class="col-sm-9">
-					      <input type="text" class="form-control" name="password" value="<?php echo $rowselectedit['password']?>">
+					      <input type="password" class="form-control" name="password" value="<?php echo $rowselectedit['password']?>">
 					    </div>
 					 </div>
 		      </div>

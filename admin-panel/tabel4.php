@@ -168,7 +168,6 @@
                                     <th>Alamat</th>
                                     <th>Kota</th>
                                     <th>Email</th>
-                                    <th>Password</th>
                                     <th>Kelola data</th>
                                    </tr> 
                                 </thead>
@@ -182,8 +181,7 @@
                                 <td><?php echo $row['kota'] ?></td>
                                 <td><?php echo $row['nohp'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
-                                <td><?php echo $row['password'] ?></td>
-                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $row['id_user'] ?>">Edit</button> | <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapus<?php echo $row['id_user'] ?>">Hapus</button></td>
+                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?php echo $row['id_user'] ?>">Edit</button><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapus<?php echo $row['id_user'] ?>">Hapus</button></td>
                             </tr>
 
                             <?php include("edituser.php"); ?>
