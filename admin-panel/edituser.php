@@ -14,7 +14,9 @@
 
 			$queryedit="UPDATE user SET nama_lengkap='$nama_lengkap',jenis_kelamin='$jenis_kelamin',nohp='$nohp',alamat='$alamat',kota='$kota',email='$email',password='$password' WHERE id_user=$id_user";
 
-			$resultedit=mysqli_query($connection,$queryedit);
+			$resultedit=mysqli_query($connection,$queryedit); ?>
+			<meta http-equiv="refresh" content="0;url=tabel4.php">
+		<?php
 		}
 		?>
 

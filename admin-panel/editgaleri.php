@@ -58,11 +58,15 @@
 
 			 	$queryedit="UPDATE galeri SET nama_gambar='$nama_gambar',nama_file='$nama_file' where id_gambar='$id_gambar'";
 
-			$resultedit=mysqli_query($connection,$queryedit);
+			$resultedit=mysqli_query($connection,$queryedit); ?>
+				<meta http-equiv="refresh" content="0;url=tabel3.php">
+			<?php
 			 } else{
 				$queryedit="UPDATE galeri SET nama_gambar='$nama_gambar' where id_gambar='$id_gambar'";
 
-			$resultedit=mysqli_query($connection,$queryedit);
+			$resultedit=mysqli_query($connection,$queryedit); ?>
+				<meta http-equiv="refresh" content="0;url=tabel3.php">
+			<?php
 			}
 
 		}

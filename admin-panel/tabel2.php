@@ -106,7 +106,7 @@
                     
                     
                     <li >
-                        <a href="index.php"><i class="fa fa-table fa-fw"></i>Tabel Grafik</a>
+                        <a href="index.php"><i class="fa fa-table fa-fw"></i>Manajemen Admin</a>
                     </li>
                     <li class="selected">
                         <a href="tabel2.php"><i class="fa fa-table fa-fw"></i>Tabel Harga</a>

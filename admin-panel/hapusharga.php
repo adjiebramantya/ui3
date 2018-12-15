@@ -5,7 +5,9 @@
 	$id_harga=$_POST['id_harga'];
 
 	$queryhapus="DELETE FROM hargapadi WHERE id_harga=$id_harga";
-	$resulthapus=mysqli_query($connection,$queryhapus);
+	$resulthapus=mysqli_query($connection,$queryhapus); ?>
+		<meta http-equiv="refresh" content="0;url=tabel2.php">
+	<?php
 	}
 
 ?>

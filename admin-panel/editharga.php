@@ -10,7 +10,9 @@
 
 			$queryedit="UPDATE hargapadi SET jenisberas='$jenisberas',persen='$persen',hargaberas='$hargaberas' WHERE id_harga=$id_harga";
 
-			$resultedit=mysqli_query($connection,$queryedit);
+			$resultedit=mysqli_query($connection,$queryedit); ?>
+		<meta http-equiv="refresh" content="0;url=tabel2.php">
+		<?php
 		}
 		?>
 

@@ -167,9 +167,9 @@
 
                 $queryedit = "UPDATE artikel SET judul = '$judul', isi_artikel = '$isi' ,gambar = '$namafile' WHERE id_artikel = '$idartikel';";
 
-                mysqli_query($connection,$queryedit);
-
-
+                mysqli_query($connection,$queryedit); ?>
+                <meta http-equiv="refresh" content="0;url=tabel5.php" />
+            <?php
             }
         ?>
         <script>
