@@ -20,7 +20,7 @@
 	<div id="header" class="fixed-top">
 		<div class="row">
 			<div class="col-4" style="padding-top: 25px; padding-left: 25px;">
-				Budidaya Padi Kita
+				<h4>BUDIDAYA PADI KITA</h4>
 			</div>
 			<div class="col-8" style="padding-top: 16px; padding-left: 25px;">
 				<nav class="navbar navbar-expand-lg">
